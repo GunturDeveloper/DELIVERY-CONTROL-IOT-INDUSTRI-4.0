@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    padding: 4px;  
+    background-color: #6200ee;
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px; 
+    font-weight: bold;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+    display: flex;
+    flex: 1;
+}
+
+.nav-rail {
+    position: relative;
+    height: 125%;
+    width: 60px; 
+    background-color: #ffffff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+    transition: width 0.3s;
+}
+
+.nav-rail:hover {
+    width: 100px;
+}
+
+.nav-item {
+    width: 100%;
+    padding: 12px;  
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #6200ee;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-item p {
+    margin: 8px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.nav-rail:hover .nav-item p {
+    opacity: 1;
+}
+
+.nav-item.active {
+    color: #6200ee;
+}
+
+.nav-item:hover {
+    color: #6200ee;
+}
+
+.content {
+    margin-left: 50px; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+
+
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px; 
+    width: 100%; 
+    max-width: 600px;  
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    color: #333333;
+}
+
+.card p {
+    margin: 0;
+    color: #666666;
+}
+
+.dialog {
+    display: none;
+    width: 80%;
+    height: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.dialog-scroll {
+    overflow-y: auto;
+    max-height: 80%;
+    width: 100%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.dialog-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dialog-content button:hover {
+    background-color: #3700b3;
+}
+
+button#incrementBtn,
+button#decrementBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button#incrementBtn:hover,
+button#decrementBtn:hover {
+    background-color: #3700b3;
+}
+
+button#incrementBtn:active,
+button#decrementBtn:active {
+    transform: scale(0.95);
+}
+
+#incrementBtn {
+    margin-right: 10px;
+}
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card input {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.card button {
+    padding: 10px;
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #3700b3;
+}
+
+#toggleLink {
+    color: #6200ee;
+    cursor: pointer;
+    text-decoration: underline;
+}

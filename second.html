@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Index</title>
+</head>
+<body>
+    <header>
+        <h1>Delivery</h1>
+    </header>
+    <div class="main">
+        <div class="nav-rail">
+            <div class="nav-item active" data-target="control">
+                <span class="fa fa-robot"></span>
+                <p>Control</p>
+            </div>
+            <div class="nav-item" data-target="analysis">
+                <span class="fa fa-chart-line"></span>
+                <p>Analysis</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="card" id="control">
+                <h3>Dashboard</h3>
+                <p>Klik Increment atau Decrement untuk mengatur fungsi robot.</p>
+                <button id="incrementBtn">Increment</button>
+                <button id="decrementBtn">Decrement</button>
+            </div>
+            <div class="card" id="analysis" style="display: none;">
+                <h3>Analysis</h3>
+                <p>Data analisis.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog" class="dialog">
+        <div class="dialog-content">
+            <h1>Kebijakan dan Ketentuan</h1>
+            <div class="dialog-scroll">
+                <ol>
+                    <li>Operator bertanggung jawab penuh atas pengoperasian robot delivery selama pameran berlangsung.</li>
+                    <br>
+                    <li>Pastikan robot dalam keadaan baik dan siap digunakan sebelum mulai bertugas.</li>
+                    <br>
+                    <li>Lakukan pengecekan rutin pada sistem robot dan pastikan tidak ada gangguan teknis.</li>
+                    <br>
+                    <li>Ikuti petunjuk penggunaan yang telah disediakan, termasuk cara mengatur rute dan pengantaran barang.</li>
+                    <br>
+                    <li>Pastikan area kerja robot bebas dari rintangan dan aman bagi pengunjung serta robot itu sendiri.</li>
+                    <br>
+                    <li>Jika ada masalah teknis, segera laporkan kepada koordinator pameran untuk mendapatkan bantuan.</li>
+                    <br>
+                    <li>Jaga komunikasi yang baik dengan tim lain untuk memastikan kelancaran operasional robot.</li>
+                    <br>
+                    <li>Semua data dan informasi yang diperoleh selama pengoperasian robot harus dijaga kerahasiaannya.</li>
+                    <br>
+                    <li>Patuhi semua peraturan keselamatan yang berlaku selama pameran untuk memastikan keamanan semua pihak.</li>
+                    <br>
+                    <li>Dengan menjalankan tugas sebagai operator robot delivery, Anda dianggap telah menyetujui dan memahami semua ketentuan dan kebijakan yang berlaku.</li>
+                </ol>
+            </div>
+            <button id="closeDialogBtn">Tutup</button>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
