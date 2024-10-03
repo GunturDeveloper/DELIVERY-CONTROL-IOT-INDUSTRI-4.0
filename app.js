@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/fireba
 import { getFirestore, doc, setDoc, getDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyB5Wck_Uux3u2e57hW8CyVRyviO0hRrCjQ",
     authDomain: "sghj-dc78b.firebaseapp.com",
@@ -11,6 +12,7 @@ const firebaseConfig = {
     appId: "1:478945959233:web:1fd4bb3bd16c2e49bb95c0",
     measurementId: "G-F63F7WH44D"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    
+   
     const incrementBtn = document.getElementById("incrementBtn");
     const decrementBtn = document.getElementById("decrementBtn");
 
@@ -58,6 +60,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         console.log("minus");
     });
+
+    
+    const sensorDocRef = doc(db, "sensor_data", "sensor_1");
+
+   
+    async function fetchSensorData() {
+        const sensorDoc = await getDoc(sensorDocRef);
+        
+        if (sensorDoc.exists()) {
+            const data = sensorDoc.data();
+            
+            
+            document.getElementById("flameDetection").textContent = data.flame_detection ? "True" : "False";
+            document.getElementById("humidity").textContent = `${data.humidity} %`;
+            document.getElementById("temperature").textContent = `${data.temperature} °C`;
+        } else {
+            console.log("Tidak ada dokumen cok!");
+        }
+    }
+
+    
+    const analysisTab = document.querySelector(".nav-item[data-target='analysis']");
+    analysisTab.addEventListener("click", fetchSensorData);
 });
-
-
